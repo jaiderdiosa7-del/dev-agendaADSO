@@ -1,9 +1,10 @@
-import "./App.css"; // Importamos estilos de la app
-import ContactoCard from "./components/ContactoCard"; // Importamos el componente hijo
+import { useState } from "react";
+import "./App.css";
+import ContactoCard from "./components/ContactoCard";
+import FormularioContacto from "./components/FormularioContacto";
 
 export default function App() {
-  // Esta es nuestra "base de datos" inicial quemada en el código
-  const contactos = [
+  const [contactos, setContactos] = useState([
     {
       id: 1,
       nombre: "Carolina Pérez",
@@ -11,58 +12,37 @@ export default function App() {
       correo: "carolina@sena.edu.co",
       etiqueta: "Compañera",
     },
-    {
-      id: 2,
-      nombre: "Juan Díaz",
-      telefono: "301 987 6543",
-      correo: "juan@sena.edu.co",
-      etiqueta: "Instructor",
-    },
-    {
-      id: 3,
-      nombre: "Luisa Martínez",
-      telefono: "320 555 7788",
-      correo: "luisa@sena.edu.co",
-      etiqueta: "Cliente",
-    },
-    {
-      id:4,
-      nombre: "Jaider Diosa",
-      telefono: "3122386578",
-      correo: "jaiderdiosa98@gmail.com",
-      etiqueta: "Empleado"
-    },
-    {
-      id: 5,
-      nombre: "Jhonier Andres",
-      telefono: "3165491870",
-      correo: "jhoni93xbd@gmail.com",
-      etiqueta: "Socio"
+  ]);
 
-    }
-  ];
+  // Agregar
+  const agregarContacto = (nuevo) => {
+    setContactos((prev) => [...prev, { id: Date.now(), ...nuevo }]);
+  };
+
+  // Eliminar
+  const eliminarContacto = (id) => {
+    setContactos((prev) => prev.filter((c) => c.id !== id));
+  };
 
   return (
     <main className="app-container">
-      <h1 className="app-title">Agenda ADSO 📒</h1>
+      <h1 className="app-title">Agenda ADSO v2</h1>
 
-      <p className="app-subtitle">Contactos guardados</p>
+      <FormularioContacto onAgregar={agregarContacto} />
 
-      {/* Recorremos el arreglo contactos y pintamos una tarjeta por cada uno */}
-      {contactos.map((c) => (
-        <ContactoCard
-          key={c.id}            // key única para React
-          nombre={c.nombre}     // prop nombre
-          telefono={c.telefono} // prop telefono
-          correo={c.correo}     // prop correo
-          etiqueta={c.etiqueta} // prop etiqueta (Cliente, Instructor, etc.)
-        />
-      ))}
-
-      <p className="app-nota">
-        (Versión 0.1 - solo lectura, sin agregar ni editar todavía)
-      </p>
+      <section className="lista-contactos">
+        {contactos.map((c) => (
+          <ContactoCard
+            key={c.id}
+            id={c.id}
+            nombre={c.nombre}
+            telefono={c.telefono}
+            correo={c.correo}
+            etiqueta={c.etiqueta}
+            onDelete={eliminarContacto}
+          />
+        ))}
+      </section>
     </main>
   );
 }
-
