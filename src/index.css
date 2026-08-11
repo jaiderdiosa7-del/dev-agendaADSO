@@ -1,17 +1,17 @@
-/* === Estilos globales para la app React === */
+/* === Estilos globales para la app React ===
 
-/* Fuente base y fondo general */
+Fuente base y fondo general
 body {
   font-family: sans-serif;
-  background-color: #f2f2f2; /* gris claro */
-  color: #222; /* texto oscuro legible */
+  background-color: #f2f2f2; gris claro
+  color: #222; texto oscuro legible
   margin: 0;
   padding: 0;
 }
 
-/* Enlaces */
+Enlaces
 a {
-  color: #008037; /* verde SENA */
+  color: #008037; verde SENA
   text-decoration: none;
 }
 
@@ -19,7 +19,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Botones genéricos */
+Botones genéricos
 button {
   background-color: #008037;
   color: white;
@@ -31,19 +31,34 @@ button {
 }
 
 button:hover {
-  background-color: #006b2f; /* verde más oscuro */
+  background-color: #006b2f; verde más oscuro
 }
 
-/* Imágenes responsivas */
+Imágenes responsivas
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* Centramos el contenido principal */
+Centramos el contenido principal
 #root {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
 }
+/*  */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Ajustes base del body */
+@layer base {
+body {
+ @apply bg-gray-50 text-gray-800 font-sans;
+ }
+}
+body{
+  background-color: rgb(225, 242, 241);
+}
+
