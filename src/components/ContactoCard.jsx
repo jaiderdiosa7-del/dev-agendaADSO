@@ -1,38 +1,44 @@
-// src/components/ContactoCard.jsx
 export default function ContactoCard({
- nombre,
- telefono,
- correo,
- empresa,
- etiqueta,
- onEliminar
+  id,
+  nombre,
+  telefono,
+  correo,
+  empresa,
+  etiqueta,
+  onEliminar
 }) {
- return (
- <article className="bg-white border border-gray-200 rounded-xl shadow-sm p-5">
- {/* Nombre destacado */}
- <h3 className="text-xl font-bold text-white-900 mb-3">
- {nombre}
- </h3>
- {/* Teléfono */}
- <p className="text-gray-700 mb-1"></p>
- telefono: {telefono}
- <p className="text-gray-700 mb-1"></p>
- correo: {correo}
- <p className="text-gray-700 mb-1"></p>
-  Empresa: {empresa}
-  <p className="text-gray-700 mb-1"></p>
-  Etiqueta: {etiqueta}
+  return (
+    <article className="bg-white border border-gray-200 rounded-xl shadow-sm p-5">
 
-{/* acciones (alineado a la izqueierda en movil) */}  
- <div className="flex justify-start">
- <button
- onClick={() => onEliminar(correo)}
- className="bg-red-500 hover:bg-red-600 text-white text-sm font-medium
-px-4 py-2 rounded-lg transition-colors"
- >
- Eliminar
- </button>
- </div>
- </article>
- );
+      <h3 className="text-xl font-bold text-gray-900 mb-3">
+        {nombre}
+      </h3>
+
+      <p className="text-gray-700 mb-1">
+        Teléfono: {telefono}
+      </p>
+
+      <p className="text-gray-700 mb-1">
+        Correo: {correo}
+      </p>
+
+      <p className="text-gray-700 mb-1">
+        Empresa: {empresa}
+      </p>
+
+      <p className="text-gray-700 mb-4">
+        Etiqueta: {etiqueta}
+      </p>
+
+      <div className="flex justify-start">
+        <button
+          onClick={onEliminar}
+          className="bg-red-500 hover:bg-red-600 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+        >
+          Eliminar
+        </button>
+      </div>
+
+    </article>
+  );
 }

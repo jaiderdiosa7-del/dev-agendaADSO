@@ -1,58 +1,75 @@
-// App.jsx
 import { useState, useEffect } from "react";
 
 import FormularioContacto from "./components/FormularioContacto";
-
 import ContactoCard from "./components/ContactoCard";
 
-// Nota: toda la lógica de contactos (agregar/eliminar/persistir) se mantiene.
+import {
+  listarContactos,
+  crearContacto,
+  eliminarContactoPorId
+} from "./api.js";
+
 export default function App() {
 
- // 1) Cargar lo guardado en localStorage (o array vacío)
- const contactosGuardados = JSON.parse(localStorage.getItem("contactos")) || [];
+  const [contactos, setContactos] = useState([]);
 
- // 2) Estado con la lista de contactos
- const [contactos, setContactos] = useState(contactosGuardados);
+  // GET - cargar contactos al iniciar
+  useEffect(() => {
+    listarContactos()
+      .then(data => setContactos(data))
+      .catch(error => console.error(error));
+  }, []);
 
- // 3) Persistir cambios en localStorage
- useEffect(() => {
+  // POST - agregar contacto
+  const agregarContacto = async (form) => {
+    try {
+      const nuevo = await crearContacto(form);
 
- localStorage.setItem("contactos", JSON.stringify(contactos));
+      setContactos(prev => [...prev, nuevo]);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
- }, [contactos]);
+  // DELETE - eliminar contacto
+  const eliminarContacto = async (id) => {
+    try {
+      await eliminarContactoPorId(id);
 
- // 4) Agregar contacto (siempre inmutable)
- const agregarContacto = (nuevo) => setContactos(prev => [...prev, nuevo]);
+      setContactos(prev =>
+        prev.filter(contacto => contacto.id !== id)
+      );
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
- // 5) Eliminar usando correo como clave única
- const eliminarContacto = (correo) =>
- setContactos(prev => prev.filter(c => c.correo !== correo));
+  return (
+    <main className="min-h-screen py-10 px-4">
 
- return (
- <main className="min-h-screen py-10 px-4">
+      <h1 className="text-4xl font-bold text-center text-purple-600 mb-8">
+        Agenda ADSO v3
+      </h1>
 
- {/* Título centrado con color morado */}
- <h1 className="text-4xl font-bold text-center text-purple-600 mb-8">
+      <div className="max-w-4xl mx-auto">
 
- Agenda ADSO v3
- </h1>
+        <section className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 mb-6">
+          <FormularioContacto onAgregar={agregarContacto} />
+        </section>
 
- <div className="max-w-4xl mx-auto">
- {/* Tarjeta del formulario */}
- <section className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 mb-6">
- <FormularioContacto onAgregar={agregarContacto} />
- </section>
- {/* Lista de contactos */}
- <section className="space-y-4">
- {contactos.map((c) => (
- <ContactoCard
- key={c.correo}
- {...c}
- onEliminar={eliminarContacto}
- />
- ))}
- </section>
- </div>
- </main>
- );
+        <section className="space-y-4">
+
+          {contactos.map((contacto) => (
+            <ContactoCard
+              key={contacto.id}
+              {...contacto}
+              onEliminar={() => eliminarContacto(contacto.id)}
+            />
+          ))}
+
+        </section>
+
+      </div>
+    </main>
+  );
 }
