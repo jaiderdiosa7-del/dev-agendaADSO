@@ -59,6 +59,6 @@ body {
  }
 }
 body{
-  background-color: rgb(225, 242, 241);
+  background: linear-gradient(135deg, #2e1065, #172554, #020617);
 }
 

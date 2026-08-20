@@ -8,25 +8,25 @@ export default function ContactoCard({
   onEliminar
 }) {
   return (
-    <article className="bg-white border border-gray-200 rounded-xl shadow-sm p-5">
+    <article className="bg-gradient-to-br from-black via-blue-950 to-slate-950 border border-gray-200 rounded-xl shadow-sm p-8">
 
-      <h3 className="text-xl font-bold text-gray-900 mb-3">
+      <h3 className="text-xl font-bold text-white mb-3">
         {nombre}
       </h3>
 
-      <p className="text-gray-700 mb-1">
+      <p className="text-white mb-1">
         Teléfono: {telefono}
       </p>
 
-      <p className="text-gray-700 mb-1">
+      <p className="text-white mb-1">
         Correo: {correo}
       </p>
 
-      <p className="text-gray-700 mb-1">
+      <p className="text-white mb-1">
         Empresa: {empresa}
       </p>
 
-      <p className="text-gray-700 mb-4">
+      <p className="text-white mb-4">
         Etiqueta: {etiqueta}
       </p>
 
