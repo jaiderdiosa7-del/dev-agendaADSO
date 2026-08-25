@@ -12,5 +12,5 @@ export const APP_INFO = {
   titulo: "Agenda ADSO v7",
   // Subtítulo o descripción corta que aparece debajo del título
   subtitulo:
-    "Gestión de contactos conectada a una API local con JSON Server, con validaciones y mejor experiencia de usuario.",
+    "Gestión de contactos conectada a una API local con JSON Server, con validaciones y mejor experiencia de usuario..",
 };

@@ -111,7 +111,7 @@ function App() {
           <p className="text-xs tracking-[0.3em] text-gray-500 uppercase">
             Desarrollo Web ReactJS Ficha {APP_INFO.ficha}
           </p>
-          <h1 className="text-4xl font-extrabold text-gray-900 mt-2">
+          <h1 className="text-4xl font-extrabold text-gray-800 mt-2">
             {APP_INFO.titulo}
           </h1>
           <p className="text-sm text-gray-600 mt-1">

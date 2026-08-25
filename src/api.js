@@ -10,7 +10,7 @@ export async function listarContactos() {
   const res = await fetch(API_BASE_URL);
 
   // Si la respuesta no es correcta (código 4xx o 5xx), lanzamos un error
-  if (!res.ok) throw new Error("Error al listar contactos");
+  if (!res.ok) throw new Error("Error al listar contactos.");
 
   // Parseamos el JSON y lo retornamos (devuelve un array de contactos)
   return res.json();
