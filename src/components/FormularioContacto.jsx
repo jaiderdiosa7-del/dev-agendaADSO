@@ -94,7 +94,7 @@ function FormularioContacto({ onAgregar }) {
       // Marcamos que el formulario está en proceso de envío
       setEnviando(true);
 
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      
 
       // Llamamos a la función que llega por props y que se encarga de guardar el contacto
       // Puede ser una llamada a la API a través de api.js

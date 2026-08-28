@@ -7,6 +7,38 @@
       "etiqueta": "aprendiz",
       "empresa": "sena",
       "id": "FZhGWwnsM_g"
+    },
+    {
+      "nombre": "jaider diosa",
+      "telefono": "3006263887",
+      "correo": "jaiderdiosa@gmail.com",
+      "empresa": "sena",
+      "etiqueta": "aprendiz",
+      "id": "B7PqNWio7qA"
+    },
+    {
+      "nombre": "Tavo",
+      "telefono": "3122434443",
+      "correo": "tavo@gamil.com",
+      "empresa": "sena",
+      "etiqueta": "Instructor",
+      "id": "VDOsyoYx2m0"
+    },
+    {
+      "nombre": "dieguto",
+      "telefono": "3126590900",
+      "correo": "guto@gmail.com",
+      "empresa": "Colanta",
+      "etiqueta": "Empleado",
+      "id": "WLJPBTvw1hU"
+    },
+    {
+      "nombre": "Carlos Navia",
+      "telefono": "3142567465",
+      "correo": "Navia@gmail.com",
+      "empresa": "Textil",
+      "etiqueta": "Empleado",
+      "id": "CwKnqDiGquI"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
