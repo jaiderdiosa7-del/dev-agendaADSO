@@ -1,14 +1,6 @@
 {
   "contactos": [
     {
-      "nombre": "Jhonier pitillo",
-      "telefono": "3122386500",
-      "correo": "jhoni93xd@gma.com",
-      "etiqueta": "aprendiz",
-      "empresa": "sena",
-      "id": "FZhGWwnsM_g"
-    },
-    {
       "nombre": "jaider diosa",
       "telefono": "3006263887",
       "correo": "jaiderdiosa@gmail.com",
@@ -17,28 +9,25 @@
       "id": "B7PqNWio7qA"
     },
     {
-      "nombre": "Tavo",
-      "telefono": "3122434443",
-      "correo": "tavo@gamil.com",
-      "empresa": "sena",
+      "nombre": "Jhonier pitillo",
+      "telefono": "3006263887",
+      "correo": "jaiderdiosa@gmail.com",
+      "etiqueta": "aprendiz",
+      "id": "wyKdtRfyM18"
+    },
+    {
+      "nombre": "diego alejadandro",
+      "telefono": "3122386500",
+      "correo": "dieguto@gmail.com",
       "etiqueta": "Instructor",
-      "id": "VDOsyoYx2m0"
+      "id": "mwsGAxO0ZtM"
     },
     {
-      "nombre": "dieguto",
-      "telefono": "3126590900",
-      "correo": "guto@gmail.com",
-      "empresa": "Colanta",
-      "etiqueta": "Empleado",
-      "id": "WLJPBTvw1hU"
-    },
-    {
-      "nombre": "Carlos Navia",
-      "telefono": "3142567465",
-      "correo": "Navia@gmail.com",
-      "empresa": "Textil",
-      "etiqueta": "Empleado",
-      "id": "CwKnqDiGquI"
+      "nombre": "julian gomez",
+      "telefono": "3142567645",
+      "correo": "juli2008@gmail.com",
+      "etiqueta": "aprendiz",
+      "id": "ZQDSEh4Vm6M"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
