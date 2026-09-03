@@ -28,6 +28,13 @@
       "correo": "juli2008@gmail.com",
       "etiqueta": "aprendiz",
       "id": "ZQDSEh4Vm6M"
+    },
+    {
+      "nombre": "jaime",
+      "telefono": "31224544776",
+      "correo": "jaime@gmailcom",
+      "etiqueta": "Instructor",
+      "id": "WCZFXLzg2To"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
